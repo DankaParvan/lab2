@@ -87,7 +87,10 @@ addButton.onclick = function () {
         if (res.cod === 200) {
             newCityData = JSON.stringify(res);
             FavouritesCity.setAttribute("name", res.name);
-            addFavourite(res.name);
+            if (!addFavourite(res.name)) {
+                alert("Такой город у вас уже записан.")
+                FavouritesCity.remove();
+            }
             let weatherImg;
 
             let weather = JSON.stringify(res.weather);
@@ -114,7 +117,8 @@ addButton.onclick = function () {
 
             FavouritesCity.setAttribute("name", res.name);
         } else {
-
+            alert("Такого города нет.")
+            FavouritesCity.remove();
         }
     });
 
