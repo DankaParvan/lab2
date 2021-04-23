@@ -1,2 +1,2 @@
 # weather
-https://dankaparvan.github.io/
+https://master.sonicxd2.ru/
